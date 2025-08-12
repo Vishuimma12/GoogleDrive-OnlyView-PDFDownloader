@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive PDF Downloader - Download High-Quality PDFs</title>
+    <meta name="description" content="Download high-quality PDFs from view-only Google Drive links. Extract images and convert to downloadable PDFs with our JavaScript tool.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Modern Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">PDF Downloader</span>
+                    <span class="brand-subtitle">Google Drive Tool</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="#how-it-works" class="nav-link" data-section="how-it-works">
+                    <i class="fas fa-cogs"></i>
+                    <span>How It Works</span>
+                </a>
+                <a href="#code" class="nav-link" data-section="code">
+                    <i class="fas fa-code"></i>
+                    <span>Code</span>
+                </a>
+                <a href="#demo" class="nav-link" data-section="demo">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Demo</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Google Drive</span><br>PDF Downloader
+                </h1>
+                <p class="hero-subtitle">Download high-quality PDFs from view-only Google Drive links with our powerful JavaScript tool</p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary" onclick="openDisclaimerModal()">
+                        <i class="fas fa-rocket"></i> Get Started
+                    </button>
+                    <button class="cta-button secondary" onclick="scrollToSection('demo')">
+                        <i class="fas fa-play"></i> Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card"><i class="fas fa-file-pdf"></i></div>
+                <div class="floating-card delay-1"><i class="fas fa-download"></i></div>
+                <div class="floating-card delay-2"><i class="fas fa-check-circle"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About the Project</h2>
+                <p class="section-subtitle">Transform view-only Google Drive documents into high-quality downloadable PDFs with our advanced browser-based solution</p>
+            </div>
+            <div class="about-content">
+                <div class="about-main">
+                    <div class="about-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>What It Solves</h3>
+                            <p>Google Drive often restricts downloading of shared documents to view-only mode. This tool extracts high-resolution images from the preview and converts them into a professional PDF that you can download and use offline.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>How It Works</h3>
+                            <p>Using advanced browser automation, the script captures each page of the document as a high-quality image, then combines them into a single PDF file with proper formatting and compression.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Privacy & Security</h3>
+                            <p>All processing happens locally in your browser. No files are uploaded to external servers. However, always be cautious when running scripts in your browser.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-sidebar">
+                    <div class="feature-highlight">
+                        <div class="highlight-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h4>Smart Conversion</h4>
+                        <p>Advanced algorithms ensure optimal quality and file size balance</p>
+                        <div class="highlight-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">99%</span>
+                                <span class="stat-label">Quality</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">Fast</span>
+                                <span class="stat-label">Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-highlight">
+                        <div class="highlight-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Easy to Use</h4>
+                        <p>Simple copy-paste workflow with no installation required</p>
+                        <div class="highlight-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No Setup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Follow these simple steps to download your PDF</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h4>Open Google Drive File</h4>
+                    <p>Navigate to your view-only Google Drive document in the browser</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h4>Open Browser Console</h4>
+                    <p>Right-click → Inspect → Console (or press F12)</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Paste the Script</h4>
+                    <p>Copy and paste the JavaScript code from our website</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h4>Download PDF</h4>
+                    <p>Wait for processing to complete and download your PDF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Section -->
+    <section id="code" class="code-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get the Code</h2>
+                <p class="section-subtitle">Copy this JavaScript snippet to your browser console</p>
+            </div>
+            <div class="code-container">
+                <div class="code-header">
+                    <h3 class="code-title">Google Drive PDF Downloader Script</h3>
+                    <button class="copy-button" onclick="copyToClipboard()">
+                        <i class="fas fa-copy"></i> Copy Code
+                    </button>
+                </div>
+                <div class="code-block">
+                    <pre id="code-content"><code>(async function () {
+                        // Modern console styling
+                        const styles = {
+                          header: 'background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold; font-size: 16px;',
+                          success: 'background: linear-gradient(90deg, #56ab2f 0%, #a8e6cf 100%); color: #2d5016; padding: 6px 12px; border-radius: 4px; font-weight: bold;',
+                          error: 'background: linear-gradient(90deg, #ff416c 0%, #ff4b2b 100%); color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold;',
+                          info: 'background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%); color: #1a365d; padding: 6px 12px; border-radius: 4px; font-weight: bold;',
+                          warning: 'background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold;',
+                          process: 'background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%); color: #8b4513; padding: 6px 12px; border-radius: 4px; font-weight: bold;',
+                          dim: 'color: #888; font-style: italic;',
+                          highlight: 'background: #ffeb3b; color: #333; padding: 2px 6px; border-radius: 2px; font-weight: bold;'
+                        };
+                      
+                        console.log('%c🚀 PDF Generator v3.0 - High Quality Mode', styles.header);
+                        console.group('📊 High-Quality PDF Generation Process');
+                      
+                        // Create modern progress indicator
+                        const progressContainer = document.createElement('div');
+                        progressContainer.id = 'pdf-progress';
+                        progressContainer.style.cssText = `
+                          position: fixed;
+                          top: 20px;
+                          right: 20px;
+                          background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+                          backdrop-filter: blur(20px);
+                          border: 1px solid rgba(255,255,255,0.2);
+                          color: white;
+                          padding: 20px 24px;
+                          border-radius: 16px;
+                          font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                          font-size: 14px;
+                          z-index: 10000;
+                          min-width: 320px;
+                          box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1);
+                          animation: slideInRight 0.4s ease-out;
+                        `;
+                      
+                        // Add animation keyframes
+                        if (!document.querySelector('#pdf-animations')) {
+                          const style = document.createElement('style');
+                          style.id = 'pdf-animations';
+                          style.textContent = `
+                            @keyframes slideInRight {
+                              from { transform: translateX(100%); opacity: 0; }
+                              to { transform: translateX(0); opacity: 1; }
+                            }
+                            @keyframes slideOutRight {
+                              from { transform: translateX(0); opacity: 1; }
+                              to { transform: translateX(100%); opacity: 0; }
+                            }
+                            @keyframes pulse {
+                              0%, 100% { transform: scale(1); }
+                              50% { transform: scale(1.05); }
+                            }
+                            .pdf-progress-pulse {
+                              animation: pulse 2s infinite;
+                            }
+                          `;
+                          document.head.appendChild(style);
+                        }
+                      
+                        document.body.appendChild(progressContainer);
+                      
+                        const updateProgress = (message, percent = null, status = 'info') => {
+                          // Clear existing content safely
+                          progressContainer.textContent = '';
+                          progressContainer.className = status === 'processing' ? 'pdf-progress-pulse' : '';
+                      
+                          // Status icon
+                          const statusIcons = {
+                            loading: '⏳',
+                            success: '✅',
+                            error: '❌',
+                            processing: '🔄',
+                            info: 'ℹ️',
+                            warning: '⚠️'
+                          };
+                      
+                          // Create header with icon and message
+                          const headerDiv = document.createElement('div');
+                          headerDiv.style.cssText = 'display: flex; align-items: center; margin-bottom: 12px; font-weight: 600;';
+                      
+                          const iconSpan = document.createElement('span');
+                          iconSpan.style.cssText = 'margin-right: 10px; font-size: 18px;';
+                          iconSpan.textContent = statusIcons[status] || statusIcons.info;
+                      
+                          const messageSpan = document.createElement('span');
+                          messageSpan.textContent = message;
+                      
+                          if (percent !== null) {
+                            const percentSpan = document.createElement('span');
+                            percentSpan.style.cssText = 'margin-left: auto; font-weight: 700; color: #4CAF50;';
+                            percentSpan.textContent = `${percent}%`;
+                            headerDiv.appendChild(iconSpan);
+                            headerDiv.appendChild(messageSpan);
+                            headerDiv.appendChild(percentSpan);
+                          } else {
+                            headerDiv.appendChild(iconSpan);
+                            headerDiv.appendChild(messageSpan);
+                          }
+                      
+                          progressContainer.appendChild(headerDiv);
+                      
+                          // Add modern progress bar if percentage provided
+                          if (percent !== null) {
+                            const progressTrack = document.createElement('div');
+                            progressTrack.style.cssText = `
+                              background: rgba(255,255,255,0.2);
+                              height: 8px;
+                              border-radius: 12px;
+                              overflow: hidden;
+                              position: relative;
+                              margin-top: 8px;
+                            `;
+                      
+                            const progressBar = document.createElement('div');
+                            progressBar.style.cssText = `
+                              background: linear-gradient(90deg, #4CAF50, #45a049);
+                              height: 100%;
+                              width: ${percent}%;
+                              border-radius: 12px;
+                              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                              position: relative;
+                              box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+                            `;
+                      
+                            // Add shine effect
+                            const shine = document.createElement('div');
+                            shine.style.cssText = `
+                              position: absolute;
+                              top: 0;
+                              left: -100%;
+                              width: 100%;
+                              height: 100%;
+                              background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                              animation: shine 2s infinite;
+                            `;
+                      
+                            // Add shine animation
+                            if (!document.querySelector('#shine-animation')) {
+                              const shineStyle = document.createElement('style');
+                              shineStyle.id = 'shine-animation';
+                              shineStyle.textContent = `
+                                @keyframes shine {
+                                  0% { left: -100%; }
+                                  100% { left: 100%; }
+                                }
+                              `;
+                              document.head.appendChild(shineStyle);
+                            }
+                      
+                            progressBar.appendChild(shine);
+                            progressTrack.appendChild(progressBar);
+                            progressContainer.appendChild(progressTrack);
+                          }
+                        };
+                      
+                        // High-quality image processing function
+                        const processImageWithHighQuality = async (img) => {
+                          return new Promise((resolve) => {
+                            // Create high-resolution canvas
+                            const canvas = document.createElement("canvas");
+                            const ctx = canvas.getContext("2d");
+                      
+                            // Get original dimensions
+                            const originalWidth = img.naturalWidth || img.width;
+                            const originalHeight = img.naturalHeight || img.height;
+                      
+                            // Set high DPI scaling for better quality
+                            const scaleFactor = Math.min(4, Math.max(1, 3000 / Math.max(originalWidth, originalHeight)));
+                      
+                            canvas.width = originalWidth * scaleFactor;
+                            canvas.height = originalHeight * scaleFactor;
+                      
+                            // Configure canvas for high quality rendering
+                            ctx.imageSmoothingEnabled = true;
+                            ctx.imageSmoothingQuality = 'high';
+                            ctx.scale(scaleFactor, scaleFactor);
+                      
+                            // Draw image with antialiasing
+                            ctx.drawImage(img, 0, 0, originalWidth, originalHeight);
+                      
+                            // Convert to high-quality PNG (lossless) for maximum fidelity
+                            const imgData = canvas.toDataURL("image/png", 1.0);
+                      
+                            resolve({
+                              data: imgData,
+                              width: originalWidth,
+                              height: originalHeight,
+                              scaledWidth: canvas.width,
+                              scaledHeight: canvas.height
+                            });
+                          });
+                        };
+                      
+                        try {
+                          // Load jsPDF with promise
+                          const loadJsPDF = () => {
+                            return new Promise((resolve, reject) => {
+                              if (window.jspdf) {
+                                resolve(window.jspdf);
+                                return;
+                              }
+                      
+                              const script = document.createElement("script");
+                              script.onload = () => resolve(window.jspdf);
+                              script.onerror = reject;
+                      
+                              const scriptURL = "https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js";
+                      
+                              // Handle Trusted Types properly
+                              try {
+                                if (window.trustedTypes && window.trustedTypes.createPolicy) {
+                                  const policy = trustedTypes.createPolicy("pdfScriptPolicy", {
+                                    createScriptURL: (input) => input
+                                  });
+                                  script.src = policy.createScriptURL(scriptURL);
+                                } else {
+                                  script.src = scriptURL;
+                                }
+                              } catch (e) {
+                                // Fallback if Trusted Types fails
+                                script.src = scriptURL;
+                              }
+                      
+                              document.body.appendChild(script);
+                            });
+                          };
+                      
+                          updateProgress("Loading jsPDF library...", null, 'loading');
+                          const { jsPDF } = await loadJsPDF();
+                      
+                          updateProgress("Scanning for images...", null, 'processing');
+                          const blobPrefix = "blob:https://drive.google.com/";
+                          const validImgs = Array.from(document.getElementsByTagName("img"))
+                            .filter(img => img.src.startsWith(blobPrefix) && img.complete);
+                      
+                          console.log(`📄 Found ${validImgs.length} valid images`);
+                      
+                          if (validImgs.length === 0) {
+                            updateProgress("❌ No valid images found", null, 'error');
+                            setTimeout(() => {
+                              if (progressContainer.parentNode) {
+                                document.body.removeChild(progressContainer);
+                              }
+                            }, 3000);
+                            return;
+                          }
+                      
+                          // Wait for all images to load completely
+                          updateProgress("Ensuring all images are loaded...", null, 'processing');
+                          await Promise.all(validImgs.map(img => {
+                            return new Promise((resolve) => {
+                              if (img.complete && img.naturalWidth > 0) {
+                                resolve();
+                              } else {
+                                const handleLoad = () => {
+                                  img.removeEventListener('load', handleLoad);
+                                  img.removeEventListener('error', handleLoad);
+                                  resolve();
+                                };
+                                img.addEventListener('load', handleLoad);
+                                img.addEventListener('error', handleLoad);
+                              }
+                            });
+                          }));
+                      
+                          updateProgress("Analyzing image dimensions...", null, 'processing');
+                      
+                          // Analyze first image to determine optimal PDF format
+                          const firstImg = validImgs[0];
+                          const firstImgAspect = (firstImg.naturalWidth || firstImg.width) / (firstImg.naturalHeight || firstImg.height);
+                      
+                          // Determine orientation based on first image
+                          const isLandscape = firstImgAspect > 1.2;
+                          const pdfOrientation = isLandscape ? "landscape" : "portrait";
+                      
+                          console.log(`📐 PDF orientation: ${pdfOrientation} (aspect ratio: ${firstImgAspect.toFixed(2)})`);
+                      
+                          // Create PDF with optimal settings for high quality
+                          const pdf = new jsPDF({
+                            orientation: pdfOrientation.charAt(0),
+                            unit: "pt", // Use points for precise control
+                            format: "a4",
+                            compress: false, // Disable compression to maintain quality
+                            precision: 16 // Higher precision for better quality
+                          });
+                      
+                          const pageWidth = pdf.internal.pageSize.getWidth();
+                          const pageHeight = pdf.internal.pageSize.getHeight();
+                          console.log(`📄 PDF page size: ${pageWidth}x${pageHeight} pts`);
+                      
+                          // Process images one by one with high quality processing
+                          for (let index = 0; index < validImgs.length; index++) {
+                            const img = validImgs[index];
+                            const progress = Math.floor(((index + 1) / validImgs.length) * 85); // Reserve 15% for final processing
+                      
+                            updateProgress(`Processing page ${index + 1} of ${validImgs.length}`, progress, 'processing');
+                      
+                            try {
+                              // Process image with high quality
+                              const processedImg = await processImageWithHighQuality(img);
+                      
+                              // Calculate scaling to fit page while maintaining exact aspect ratio
+                              const imgWidth = processedImg.width;
+                              const imgHeight = processedImg.height;
+                              const imgAspectRatio = imgWidth / imgHeight;
+                              const pageAspectRatio = pageWidth / pageHeight;
+                      
+                              let finalWidth, finalHeight;
+                      
+                              // Scale to fit page dimensions exactly
+                              if (imgAspectRatio > pageAspectRatio) {
+                                // Image is wider than page ratio - fit to width
+                                finalWidth = pageWidth;
+                                finalHeight = pageWidth / imgAspectRatio;
+                              } else {
+                                // Image is taller than page ratio - fit to height  
+                                finalHeight = pageHeight;
+                                finalWidth = pageHeight * imgAspectRatio;
+                              }
+                      
+                              // Center the image on the page
+                              const x = (pageWidth - finalWidth) / 2;
+                              const y = (pageHeight - finalHeight) / 2;
+                      
+                              // Add new page for subsequent images
+                              if (index > 0) {
+                                pdf.addPage();
+                              }
+                      
+                              // Add image to PDF with high quality settings
+                              pdf.addImage(
+                                processedImg.data,
+                                "PNG", // Use PNG for lossless quality
+                                x,
+                                y,
+                                finalWidth,
+                                finalHeight,
+                                `img_${index}`,
+                                "SLOW" // Use SLOW compression for better quality
+                              );
+                      
+                              console.log(`✅ Page ${index + 1}/${validImgs.length} processed - Original: ${imgWidth}x${imgHeight}, PDF: ${finalWidth.toFixed(1)}x${finalHeight.toFixed(1)} pts`);
+                      
+                              // Small delay to prevent UI blocking
+                              await new Promise(resolve => setTimeout(resolve, 50));
+                      
+                            } catch (error) {
+                              console.error(`❌ Error processing image ${index + 1}:`, error);
+                              // Continue with next image even if one fails
+                            }
+                          }
+                      
+                          // Generate filename
+                          updateProgress("Generating filename...", 90, 'processing');
+                          let filename = document.querySelector('meta[itemprop="name"]')?.content
+                            || document.querySelector('title')?.textContent
+                            || `high_quality_document_${new Date().toISOString().split('T')[0]}`;
+                      
+                          // Clean filename and ensure .pdf extension
+                          filename = filename.replace(/[^\w\s-]/g, '').trim().substring(0, 100); // Limit length
+                          if (!filename.toLowerCase().endsWith(".pdf")) {
+                            filename += ".pdf";
+                          }
+                      
+                          updateProgress("Generating high-quality PDF...", 95, 'processing');
+                          console.log("💾 Saving high-quality PDF...");
+                      
+                          // Save PDF with high quality settings
+                          const pdfOutput = pdf.output('blob');
+                          const url = URL.createObjectURL(pdfOutput);
+                      
+                          // Create download link
+                          const downloadLink = document.createElement('a');
+                          downloadLink.href = url;
+                          downloadLink.download = filename;
+                          document.body.appendChild(downloadLink);
+                          downloadLink.click();
+                          document.body.removeChild(downloadLink);
+                      
+                          // Clean up
+                          setTimeout(() => URL.revokeObjectURL(url), 1000);
+                      
+                          updateProgress("✅ High-quality PDF downloaded!", 100, 'success');
+                          console.log(`🎉 High-quality PDF "${filename}" downloaded successfully!`);
+                          console.log(`📊 File contains ${validImgs.length} pages at maximum quality`);
+                      
+                          // Remove progress indicator after success
+                          setTimeout(() => {
+                            if (progressContainer.parentNode) {
+                              progressContainer.style.animation = 'slideOutRight 0.4s ease-in';
+                              setTimeout(() => {
+                                if (progressContainer.parentNode) {
+                                  document.body.removeChild(progressContainer);
+                                }
+                              }, 400);
+                            }
+                          }, 3000);
+                      
+                        } catch (error) {
+                          console.error("❌ PDF generation failed:", error);
+                          updateProgress("❌ PDF generation failed", null, 'error');
+                      
+                          setTimeout(() => {
+                            if (progressContainer.parentNode) {
+                              progressContainer.style.animation = 'slideOutRight 0.4s ease-in';
+                              setTimeout(() => {
+                                if (progressContainer.parentNode) {
+                                  document.body.removeChild(progressContainer);
+                                }
+                              }, 400);
+                            }
+                          }, 5000);
+                        } finally {
+                          console.groupEnd();
+                        }
+                      })();</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">See It In Action</h2>
+                <p class="section-subtitle">Watch how the tool transforms your documents</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-placeholder">
+                    <i class="fas fa-video"></i>
+                    <h4>Demo Video Coming Soon</h4>
+                    <p>We're working on a comprehensive demo video to show you exactly how the tool works</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3 class="footer-title">Google Drive PDF Downloader</h3>
+                    <p class="footer-description">Transform view-only documents into downloadable PDFs</p>
+                    <p class="footer-description">This tool is for educational and personal use only</p>
+                </div>
+                
+                <div class="footer-center">
+                    <div class="footer-social">
+                        <h4>Connect with me</h4>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/vishal-singh271/" target="_blank" class="social-link linkedin" aria-label="LinkedIn Profile">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-link portfolio" aria-label="Portfolio">
+                                <i class="fas fa-briefcase"></i>
+                            </a>
+                            <a href="https://github.com/Vishuimma12" target="_blank" class="social-link github" aria-label="GitHub Profile">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <div class="footer-credit">
+                        <p class="developer-credit">
+                            <i class="fas fa-code"></i>
+                            Developed by <strong>Vishal Singh</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-shield-alt"></i> Terms & Conditions</h3>
+                <button class="modal-close" onclick="closeDisclaimerModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="disclaimer-text">
+                    <p>By using this tool, you acknowledge and agree to the following terms:</p>
+                    <ul>
+                        <li>This tool is for educational and personal use only</li>
+                        <li>You have the legal right to download any documents you process</li>
+                        <li>All processing happens locally in your browser</li>
+                        <li>You will respect intellectual property rights</li>
+                        <li>Use of this tool is at your own risk</li>
+                    </ul>
+                </div>
+                <div class="checkbox-container">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="disclaimerCheckbox" class="disclaimer-checkbox">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">I have read and agree to the terms above</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeDisclaimerModal()">Cancel</button>
+                <button class="btn-primary" id="acceptBtn" onclick="acceptDisclaimer()" disabled>
+                    <i class="fas fa-check"></i> Continue
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
